@@ -6,12 +6,12 @@ function randomInt(min: number, max: number): number {
 }
 
 const RandomNumber: Component = () => {
-  const [min, setMin] = createSignal(0)
-  const [max, setMax] = createSignal(1)
+  const [min, setMin] = createSignal("0")
+  const [max, setMax] = createSignal("1")
   const [results, setResults] = createSignal<number[]>([])
   
   const showResults = () => {
-    setResults([...results(), randomInt(min(), max())])
+    setResults([...results(), randomInt(parseInt(min()), parseInt(max()))])
   }
 
   const clearResults = () => {
@@ -21,8 +21,8 @@ const RandomNumber: Component = () => {
   return (
     <section>
       <h1>Random Number</h1>
-      <input type="text" value={min()} onInput={x => setMin(parseInt(x.currentTarget.value))} />
-      <input type="text" value={max()} onInput={x => setMax(parseInt(x.currentTarget.value))} />
+      <input type="text" value={min()} onInput={setMin}/>
+      <input type="text" value={max()} onInput={setMax}/>
       <button onClick={showResults}>Generate</button>
       <button onClick={clearResults}>Clear</button>
       <ul>
