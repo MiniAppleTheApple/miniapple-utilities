@@ -5,7 +5,7 @@ const Home: Component = () => (
   <PageWrapper>
     <section>
       <hgroup class="center mt-12">
-        <h1 class="title">MiniApple's Utilities</h1>
+        <h1 class="title text-wrap">MiniApple's Utilities</h1>
         <p>Utilities tools made by MiniApple</p>
       </hgroup>
       <section class="grid mt-12">

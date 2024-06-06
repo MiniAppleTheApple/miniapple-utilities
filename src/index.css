@@ -1,6 +1,5 @@
 .center {
   margin: auto;
-  width: max-content;
 }
 
 .mt-12 {
@@ -10,3 +9,10 @@
 .title {
 	font-size: 3.5rem !important;
 }
+
+.text-wrap {
+	white-space: wrap;
+	overflow: wrap;
+  	text-overflow: wrap;
+	min-width: 0
+}	
