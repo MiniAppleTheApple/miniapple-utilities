@@ -10,8 +10,12 @@ const RandomNumber: Component = () => {
   const [max, setMax] = createSignal(1)
   const [results, setResults] = createSignal<number[]>([])
   
-  const showResult = () => {
+  const showResults = () => {
     setResults([...results(), randomInt(min(), max())])
+  }
+
+  const clearResults = () => {
+    setResults([])
   }
 
   return (
@@ -19,7 +23,8 @@ const RandomNumber: Component = () => {
       <h1>Random Number</h1>
       <input type="text" value={min()} onInput={x => setMin(parseInt(x.currentTarget.value))} />
       <input type="text" value={max()} onInput={x => setMax(parseInt(x.currentTarget.value))} />
-      <button onClick={showResult}>Generate</button>
+      <button onClick={showResults}>Generate</button>
+      <button onClick={clearResults}>Clear</button>
       <ul>
         <For each={results()} fallback={<div>No Result</div>}>
           {(item) => <li>{item}</li>}
