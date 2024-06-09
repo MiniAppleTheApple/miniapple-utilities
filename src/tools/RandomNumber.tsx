@@ -21,8 +21,8 @@ const RandomNumber: Component = () => {
   return (
     <section>
       <h1>Random Number</h1>
-      <input type="text" value={min()} onInput={setMin}/>
-      <input type="text" value={max()} onInput={setMax}/>
+      <input type="text" value={min()} onInput={e => setMin(e.currentTarget.value)}/>
+      <input type="text" value={max()} onInput={e => setMax(e.currentTarget.value)}/>
       <button onClick={showResults}>Generate</button>
       <button onClick={clearResults}>Clear</button>
       <ul>
